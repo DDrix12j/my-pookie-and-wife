@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Pookie and Wife 💖</title> 
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+      header {
+    background-color: #e0fbf4;
+    color: white;
+    padding: 200px 40px 20px 40px; /* Add left/right padding here */
+}
+      /* Reset styles for landing page */
+      #landing-page {
+        position: fixed;
+        z-index: 9999;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(135deg, #fbeffb 0%, #e0f7fa 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: opacity 0.7s;
+        min-height: 100vh;
+        min-width: 100vw;
+      }
+      #landing-page.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .landing-content {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 8px 40px #e7548030;
+        padding: 3em 2.5em 2.5em 2.5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 320px;
+        max-width: 90vw;
+        text-align: center;
+        gap: 1.2em;
+      }
+      .landing-content h1 {
+        font-size: 2.2em;
+        color: #e75480;
+        margin-bottom: 0.2em;
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+      .landing-content h2 {
+        font-size: 1.1em;
+        color: #555;
+        margin-bottom: 1.2em;
+        font-family: 'Poppins', Arial, sans-serif;
+        font-weight: 400;
+      }
+      .landing-content button {
+        background: linear-gradient(90deg, #e75480 0%, #ffb6d5 100%);
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        padding: 0.9em 2.2em;
+        font-size: 1.15em;
+        font-family: 'Montserrat', Arial, sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 1.5em;
+        box-shadow: 0 2px 12px #e7548040;
+        transition: background 0.2s, transform 0.15s;
+      }
+      .landing-content button:hover {
+        background: linear-gradient(90deg, #ffb6d5 0%, #e75480 100%);
+        transform: scale(1.04);
+      }
+      /* Add this for the overlay and hearts */
+      #landing-page {
+        position: fixed;
+        z-index: 9999;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(135deg, #ffe0ec 0%, #fff6f9 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transition: opacity 0.7s;
+      }
+      #landing-page.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .landing-content {
+        text-align: center;
+        background: rgba(255,255,255,0.85);
+        padding: 2em 3em;
+        border-radius: 24px;
+        box-shadow: 0 6px 32px #f9b6d1;
+      }
+      .landing-content h1 {
+        font-size: 2.5em;
+        color: #e75480;
+        margin-bottom: 0.5em;
+      }
+      .landing-content button {
+        background: #e75480;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        padding: 0.8em 2em;
+        font-size: 1.2em;
+        cursor: pointer;
+        margin-top: 1.5em;
+        box-shadow: 0 2px 12px #f9b6d1;
+        transition: background 0.2s;
+      }
+      .landing-content button:hover {
+        background: #ff8fb2;
+      }
+      .hearts-container {
+        position: fixed;
+        pointer-events: none;
+        left: 0; top: 0; width: 100vw; height: 100vh;
+        z-index: 10000;
+      }
+      .heart {
+        position: absolute;
+        width: 32px; height: 32px;
+        pointer-events: none;
+        opacity: 0.85;
+        animation: flyUp 1.8s cubic-bezier(.17,.67,.83,.67) forwards;
+      }
+      @keyframes flyUp {
+        0% {
+          transform: scale(0.7) translateY(0) rotate(-10deg);
+          opacity: 0.8;
+        }
+        60% {
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1.2) translateY(-320px) rotate(20deg);
+          opacity: 0;
+        }
+      }
+      #intro-overlay {
+        position: fixed;
+        z-index: 10000;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 2em;
+        transition: opacity 0.7s;
+      }
+      #intro-overlay.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .intro-content h1 {
+        font-size: 2.5em;
+        color: #e75480;
+        margin-bottom: 0.5em;
+      }
+      .intro-content p {
+        margin-bottom: 1.5em;
+        color: #333;
+      }
+      .intro-content button {
+        background: #e75480;
+        color: #fff;
+        border: none;
+        border-radius: 30px;
+        padding: 0.8em 2em;
+        font-size: 1.2em;
+        cursor: pointer;
+        box-shadow: 0 2px 12px #f9b6d1;
+        transition: background 0.2s;
+      }
+      .intro-content button:hover {
+        background: #ff8fb2;
+      }
+      .surprise-burst {
+        position: fixed;
+        z-index: 10001;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .burst-message {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 2em;
+        border-radius: 12px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1em;
+      }
+      .burst-message span {
+        font-size: 2em;
+        color: #e75480;
+        display: block;
+        margin-bottom: 0.5em;
+      }
+      .burst-icons {
+        width: 50px;
+        height: 50px;
+        background: url('images/surprise_icons.png') no-repeat center center;
+        background-size: contain;
+      }
+      .heart-tree-container {
+        display: none;
+        position: fixed;
+        z-index: 12000;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.7);
+        transition: opacity 0.7s;
+      }
+      .heart-leaf {
+        opacity: 0;
+        transform-origin: center;
+        animation: heart-pop 0.7s forwards;
+      }
+      @keyframes heart-pop {
+        0% { transform: scale(0.2); opacity: 0; }
+        60% { transform: scale(1.2); opacity: 1; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      .tree-branch {
+        stroke: #462e14;
+        stroke-width: 8;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: branch-grow 1.2s forwards;
+      }
+      @keyframes branch-grow {
+        to { stroke-dashoffset: 0; }
+      }
+      #heart-tree-overlay.background-only #canvas,
+#heart-tree-overlay.background-only #tree-text,
+#heart-tree-overlay.background-only #close-heart-tree {
+  display: none !important;
+}
+#heart-tree-overlay.background-only {
+  pointer-events: none;
+}
+
+/* --- Cute Mail Letter Styles --- */
+.letter-image {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  box-sizing: border-box;
+}
+
+.animated-mail {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  perspective: 600px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.animated-mail .body {
+  width: 300px;
+  height: 120px;
+  background: #fff;
+  border: 2px solid #e75480;
+  border-radius: 0 0 16px 16px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.animated-mail .top-fold {
+  width: 300px;
+  height: 80px;
+  background: #e75480;
+  border-radius: 16px 16px 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  transform-origin: top center;
+  box-shadow: 0 4px 12px #e7548030;
+}
+
+.animated-mail .letter {
+  width: 260px;
+  height: 100px;
+  background: #fff;
+  border-radius: 8px;
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  z-index: 2;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 1em 0.5em;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px #e7548030;
+  color: #222;
+}
+
+.animated-mail .letter h1 {
+  font-size: 1.2em;
+  color: #e75480;
+  margin-bottom: 0.4em;
+}
+
+.animated-mail .letter h2 {
+  font-size: 0.9em;
+  color: #444;
+  margin-bottom: 1em;
+}
+
+.animated-mail .letter-title {
+  width: 80%;
+  height: 18px;
+  background: #ffe0ec;
+  margin: 12px auto 8px auto;
+  border-radius: 4px;
+}
+
+.animated-mail .letter-context {
+  width: 60%;
+  height: 12px;
+  background: #ffe0ec;
+  margin: 0 auto 12px auto;
+  border-radius: 4px;
+}
+
+.animated-mail .letter-stamp {
+  width: 32px;
+  height: 32px;
+  background: #e75480;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animated-mail .letter-stamp-inner {
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.animated-mail .left-fold,
+.animated-mail .back-fold,
+.animated-mail .shadow {
+  display: none;
+}
+
+/* Center the mail on the page */
+.header-flex {
+    display: flex;
+    flex-direction: row;      /* row layout: logo left, title right */
+    align-items: center;      /* vertical alignment */
+    justify-content: center;  /* center the flex container itself */
+    gap: 28px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 1400px;        /* optional: limit header width */
+    margin-left: auto;
+    margin-right: auto;
+}
+.logo {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 320px;
+    /* REMOVE margin-left: 400px; */
+}
+.header-title {
+    flex: 1 1 0;
+    font-family: 'Great Vibes';
+    font-size: 5em;
+    color: #000000;
+    margin-top: 0;
+    margin-right: 0;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px #fff3fa;
+    text-align: center;       /* center the text in the available space */
+}
+  #freext a {
+  color: black;
+  text-decoration: underline; /* optional for clarity */
+}
+#freext h1 {
+  color: black;
+}
+#freext p {
+  font-size: 1.1em; /* or increase as needed */
+  line-height: 1.6;  /* better spacing for readability */
+}
+#jersey h1 {
+  color: black;
+}
+
+#jersey p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+#nyc h1 {
+  color: rgb(255, 255, 255);
+}
+#nyc h2 {
+  color: rgb(255, 255, 255);
+}
+#nyc p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color:#ffffff;
+}
+#nyc {
+  background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  padding: 20px;
+  border-radius: 10px; /* optional rounded corners */
+  max-width: 800px; /* optional width limit */
+}
+#worldcup h1 {
+  color: black;
+}
+
+#worldcup p {
+   font-size: 1.1em;
+  line-height: 1.6;
+  color:#000000;
+  
+}
+#n7 h1 {
+  color: rgb(0, 0, 0);
+}
+#n7 h2 {
+  color: rgb(0, 0, 0);
+}
+#n7 p {
+    font-size: 1.1em;
+  line-height: 1.6;
+  color:#000000;
+}
+#n7 {
+  background-color: rgba(255, 255, 255, 0.5); /* semi-transparent black */
+  padding: 20px;
+  border-radius: 10px; /* optional rounded corners */
+  max-width: 800px; /* optional width limit */
+}
+#cardboardbox h1 {
+  color: rgb(255, 255, 255);
+}
+#cardboardbox h2 {
+  color: rgb(255, 255, 255);
+}
+#cardboardbox p {
+    font-size: 1.1em;
+  line-height: 1.6;
+  color:#ffffff;
+}
+#cardboardbox {
+  background-color: rgba(0, 0, 0, 0.1); /* semi-transparent black */
+  padding: 20px;
+  border-radius: 10px; /* optional rounded corners */
+  max-width: 800px; /* optional width limit */
+}
+#greenrubber h1 {
+  color: rgb(255, 255, 255);
+}
+#greenrubber h2 {
+  color: rgb(255, 255, 255);
+}
+#greenrubber p {
+    font-size: 1.1em;
+  line-height: 1.6;
+  color:#ffffff;
+}
+.fancy {
+  position: relative;
+  white-space: nowrap;
+}
+.fancy::after {
+  --deco-height: 0.3125em;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--deco-height) * -0.625);
+  height: var(--deco-height);
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath d='M-17 30.5C-1 22 72-4 54 13 37.9 28.2-2.5 57.5 16 55.5s72-29 104-40' stroke='%23000000' stroke-width='10'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h100v64H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-size: auto 100%;
+  background-repeat: round;
+  background-position: 0em;
+}
+.header-ghost {
+    min-width: 320px; /* Same as .logo min-width */
+    flex: 0 0 auto;
+}
+    </style>
+</head>
+<body>
+     <!-- Heart Tree Overlay -->
+<div id="heart-tree-overlay" style="display:none; position:fixed; z-index:99999; top:0; left:0; width:100vw; height:100vh; background: url('images/totoro028.jpg') center center / cover no-repeat #ff000000; align-items:center; justify-content:center;">
+    <button id="close-heart-tree" style="position:absolute;top:24px;right:32px;z-index:100000;font-size:2em;background:none;border:none;color:#fff;cursor:pointer;">×</button>
+    <canvas id="canvas" width="1100" height="680" style="display:block; margin:auto;"></canvas>
+    <div id="tree-text" style="position:absolute; left:10%; top:10%; color:#fff; font-size:1.3em; font-family:sans-serif; text-shadow:0 2px 8px #000;">
+        <span class="say">My beautiful wife 💞</span><br>
+        <span class="say">Happy Anniversary ! 🎈</span><br>
+        <span class="say">This is our first 🍀</span><br>
+        <span class="say">And there are more to come in the future 💕</span><br>
+        <span class="say">I love you ❤️</span><br>
+        <span class="say">And I will always love u 🥺 ❤️</span><br>
+        <span class="say">yes I code all this you better read and see everything ❤️😘</span><br>
+    </div>
+</div>
+<script>
+var closeBtn = document.getElementById('close-heart-tree');
+if (closeBtn) {
+    closeBtn.onclick = function() {
+        var overlay = document.getElementById('heart-tree-overlay');
+        if (overlay) {
+            overlay.style.display = 'none';
+        }
+    };
+}
+</script>
+
+<!-- <div id="landing-page" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
+    <div class="letter-image">
+        <div class="animated-mail">
+            <div class="back-fold"></div>
+            <div class="body"></div>
+            <div class="letter">
+              <h1>Wife And Pookie💌</h1>
+              <h2>if u my pookie click this ho</h2>
+              <button id="surprise-btn">Click to see nearby single moms in your area💖</button>
+              <div class="letter-title"></div>
+              <div class="letter-context"></div>
+              <div class="letter-stamp">
+                <div class="letter-stamp-inner"></div>
+              </div>
+            </div>
+            <div class="top-fold"></div>
+            <div class="left-fold"></div>
+            <div class="shadow"></div>
+          </div>
+        <div class="shadow"></div>
+    </div>
+</div> -->
+   
+<header>
+    <div class="header-flex">
+        <div class="logo">
+            <img src="images/logo_sml.jpg" width="300" height="300" style="margin-top:-30px; margin-left:-20px;">
+        </div>
+        <div class="header-title">
+            <span class="fancy">Happy Anniversary My Pookie</span>
+        </div>
+        <div class="header-ghost"></div>
+    </div>
+</header>
+
+    <div class="nav-dots">
+        <div class="dot-container">
+            <div class="dot" id="dot1" data-content="Home"></div>
+        </div>
+        <div class="dot-container">
+            <div class="dot" id="dot2" data-content="Nike Free TR Fit"></div>
+        </div>
+        <div class="dot-container">
+            <div class="dot" id="dot3" data-content="8 Plastic Bottles"></div>
+        </div>
+        <div class="dot-container">
+            <div class="dot" id="dot4" data-content="Power Of Sport"></div>
+        </div>
+        <div class="dot-container">
+            <div class="dot" id="dot5" data-content="NYC Plays Ball"></div>
+        </div>
+        <div class="dot-container">
+            <div class="dot" id="dot6" data-content="Homeless World Cup"></div>
+        </div>
+        <div class="dot-container">
+            <div class="dot" id="dot7" data-content="Nike N7"></div>
+        </div>
+        <div class="dot-container">
+            <div class="dot" id="dot8" data-content="Power Of Sport"></div>
+        </div>
+        <div class="dot-container">
+            <div class="dot" id="dot9" data-content="A Better Shoebox"></div>
+        </div>
+        <div class="dot-container">
+            <div class="dot" id="dot10" data-content="Soweto's Next Generation"></div>
+        </div>
+        <div class="dot-container">
+            <div class="dot" id="dot11" data-content="Technology Exchange"></div>
+        </div>
+    </div>
+
+    <div class="overlay">
+        <div class="popup">
+            <div class="close-bar">
+                <div class="close-icon">
+                    <img src="images/rsz_close.png" width="30px" height="30px">
+                </div>
+            </div>
+            <video class="player" controls>
+                <source src="video/video.mkv">
+            </video>
+        </div>
+    </div>
+
+    <!-- section 1 -->
+ <section>
+  <div class="parent">
+    <div class="child"
+         style="background: url(images/bg2_video.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: top center;">
+    </div>
+  </div>
+
+</section>
+
+    <!-- section 2 -->
+<section>
+  <div class="parent">
+    <div class="child" style="
+      background: url(images/bg_freext38.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;">
+    </div>
+    <div class="fg">
+      <img src="images/10.png">
+    </div>
+  </div>
+
+  <div class="content" id="freext">
+    <h1>It's the<br> way we met, <br>  and the way<br> I fell in love <br> with you</h1>
+    <h2>Miothepurrito</h2>
+    <p>
+It all began in June last year<br>
+      I asked if she wanted a boosting service (my ass was really hoping she say yes)<br>
+      And somehow she did, and that “yes” turned into late-night chats, shared laughs, and an unexpected closeness just like what we used to have.<br><br>
+      I enjoyed everyday calling and talking with her, day never felt complete without hearing her voice<br>
+      Even when life pulled us apart for a little while, I couldn't believed we still end up being together.<br><br>
+      Time passed, but love stayed. And here we are — one year later — stronger, sweeter, and still crazy about each other.
+    </p>
+  </div>
+</section>
+
+
+    <!-- section 3 -->
+    <section>
+        <div class="parent">
+    <div class="child" style="
+      background: url(images/sec5.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;">
+    </div>
+        <div class="content" id="jersey">
+            <h1>In every <br> little moments.</h1>
+            <h2>My Wife</h2>
+            <p>Every day with her feels like a little piece of magic.<br><br>
+We hang out, talk about our days, and dive into new games we discover together — just the two of us, laughing, teasing, playing side by side.<br><br>
+
+Some nights, we stay on the phone until it's way too late, just to say how much we love each other (and get freaky). Those late-night calls are where our hearts feel closest.<br><br>
+
+Sure, we have our moments — little arguments, days we don’t talk — but somehow, she’s always the one who holds on.
+She stays, she reaches out, and she never lets go.<br><br>
+
+And every time she does, I fall even more in love with her..</p>
+        </div>
+    </section>
+
+       <!-- section 4 -->
+    <section>
+        <div class="slider">
+            <div class="slider-container">
+                <div class="slides">
+                    <h1> Wage sport <br> on war. </h1>
+                    <p>Need to stop a war? Look no further than soccer. A civil war in Ivory Coast came to a cease-fire
+                        during the 2006 Football World Championship when the national soccer team progressed to the
+                        finals. Sport 1. War 0.</p>
+                </div>
+                <div class="slides">
+                    <h1> Sport doesn't care <br> who you are. </h1>
+                    <p>In the 1980 Olympics, an ice hockey team of mainly college students from America stepped onto the
+                        ice against a formidable Soviet team dubbed undefeatable. Sport had other plans.</p>
+                </div>
+                <div class="slides">
+                    <h1> Apathy, we'd like to <br> ask you to step <br> outside. </h1>
+                    <p>About 15 million Americans have Type 2 diabetes. Some experts claim that certain diagnoses of
+                        Type 2 diabetes can be prevented by regular exercise, a healthy diet and losing excess weight.
+                        You do the math.</p>
+                </div>
+                <div class="slides">
+                    <h1> Sport <br>is nature's <br>crack. </h1>
+                    <p>Adrenaline junkies get their fix from sport, as well as dopamine, endorphins and serotonin. Hit
+                        me up.</p>
+                </div>
+                <div class="slides">
+                    <h1> Put a rocket up <br> possibility's ass. </h1>
+                    <p>Jason Pisano has cerebral palsy. A debilitating disease. But his left foot still works like a
+                        charm. He's 50 marathons in, but who's counting?</p>
+                </div>
+                <div class="slides">
+                    <h1> Get infected <br> with sport. </h1>
+                    <p>Throughout the developing world, youth sports programs are being combined with education about
+                        treatment and prevention of HIV, which makes sport HIV's cancer.</p>
+                </div>
+                <div class="slides">
+                    <h1> Sport will make <br> you rich. </h1>
+                    <p>About two thousand dollars richer. Experts calculated that's the amount of money that could be
+                        saved in medical costs within two years when sedentary adults increase their physical activity
+                        to 90 minutes a week. Show me the money.</p>
+                </div>
+                <div class="slides">
+                    <h1> Sport smacks down <br> violence. </h1>
+                    <p>For 200,000 young refugees in Africa, the MES program provides access to education and sport.
+                        This raises self-esteem and teaches the importance of peaceful coexistence, which can stop
+                        future wars, which could bring peace to a volatile region. If you're smart enough to sport, you
+                        can save the world.</p>
+                </div>
+                <div class="slides">
+                    <h1> Sport dispells <br> myths. </h1>
+                    <p>Meet Jason McElwain. He scored six three-pointers in a school basketball game. He matched the
+                        school record. He is autistic. Did we mention he scored six three-pointers in a school
+                        basketball game?</p>
+                </div>
+            </div>
+        </div>
+        <div class="more">
+            <img src="images/refresh.gif" id="refresh">
+            <img src="images/icon_more.png" id="more-img">
+        </div>
+    </section>
+
+    <!-- section 5 -->
+    <section>
+        <div class="parent">
+    <div class="child" style="
+      background: url(images/dasocute.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;">
+    </div>
+        <div class="content" id="nyc">
+            <h1>The storm <br> i'd stand <br> in any day.</h1>
+            <h2>smol and spicy</h2>
+            <p>She’s the kind of person Ive always think of. confident, outgoing, and never afraid to speak her mind.<br><br>
+When it comes to serious things like school or life, she’s focused, organized, and incredibly ambitious.<br><br>
+She gets frustrated easily, sometimes overwhelmed or hot-headed — but that’s just because she cares so much. And when the world gets heavy, I’m always right there beside her, holding her through it.<br><br>
+But then there’s her softer side. The one that melts me with sweet words, her love words never made me feel this melt before.<br><br>
+She’s tiny in size but huge in personality — loud, loving, a little chaotic, really a goober and completely, perfectly mine.<br><br>
+And I wouldn’t change a single thing.</p>
+        </div>
+    </section>
+
+    <!-- section 6 -->
+    <section>
+        <div class="parent">
+            <div class="child" style="background: url(images/sec6awa.png);background-position: top;"></div>
+            <div class="fg" id="fg2">
+                <img src="images/th2.png">
+            </div>
+        </div>
+        <div class="content" id="worldcup">
+            <h1>Always <br> will be <br> yours.</h1>
+            <h2>you made me whole</h2>
+            <p>I’m not perfect — I’ve had flaws, doubts, and wounds I never really let anyone see.<br> <br> 
+For the longest time, I wasn’t confident. I’d lie to myself just to get through each day.<br> <br> 
+My past? It was filled with chasing someone who never wanted to stay. It broke me, and it left me with trust issues I carried everywhere.<br> <br> 
+
+But then she came along. And she chose me — every time, in every way.<br> <br> 
+
+She held my hand when I felt alone. She stayed when I tried to push the world away.<br> 
+And somewhere between her love and her patience, I started to change.<br> <br> 
+
+I began to believe in myself again.<br> <br> 
+
+Things that once felt heavy became lighter with her beside me. I found joy, fun, and most of all, purpose.<br> <br> 
+
+Because of her, I’ve grown into someone better.
+Not perfect — but trying, learning, becoming.<br> <br> 
+
+For her. For us. For the future we’re building together.</p>
+        </div>
+    </section>
+
+    <!-- section 7 -->
+    <section>
+        <div class="parent">
+    <div class="child" style="
+      background: url(images/bg123.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;">
+    </div>
+        <div class="content" id="n7">
+            <h1>Still <br>here, <br>Still <br>holding on.</h1>
+            <h2>you still chose me</h2>
+            <p>I’ve made mistakes — the kind most people don’t come back from.<br> 
+The kind that could’ve ended us. And truthfully, I thought they had.<br> <br> 
+
+What I did… it’s something I will always carry with me. I can’t forgive myself for it — not fully — but you did.<br> <br> 
+
+You gave me a chance. Then another. And another.<br> <br> 
+
+You stayed, even when you had every reason to walk away.<br> 
+That kind of love... it's beyond words. It taught me more than anything else ever could.<br> <br> 
+
+It taught me how serious this is — how much I need to grow. Not just to say sorry, but to show change. To become the man you believed I could be.<br> <br> 
+
+I know there were times you blamed yourself — wondering if it was your fault, if you could’ve done something differently.<br> <br> 
+
+Please don’t carry that weight. It was never yours to hold.<br> <br> 
+
+No one asked for the pain, but we both chose to fight through it.<br> 
+We talked, we listened, we cried. And we kept coming back.<br> <br> 
+
+That’s what love is. Not perfect — but real, raw, and worth it.<br> <br> 
+
+And I’ll spend every day proving that I’m worth the forgiveness you gave me.</p>
+        </div>
+    </section>
+<!-- section 8 -->
+    <section>
+        <div class="slider">
+            <div class="slider-container">
+                <div class="slides2">
+                    <h1>If you have a torso, <br> you're an athlete.</h1>
+                    <p>In 2007, South African sprinter Oscar Pistorius ran the 100 meters in 10.91 seconds. Without any
+                        legs. The first amputee to break the sub-11-seconds barrier. Some critics claim that the carbon
+                        fiber blades he ran on gave him an unfair advantage. Those critics had legs.</p>
+                </div>
+                <div class="slides2">
+                    <h1> Sport hates on <br> hopelessness.</h1>
+                    <p>In Haiti, a sports program offered by the HOC (the Haitian Olympic Committee) together with
+                        UNICEF runs 52 camps around the Haitian province for more than 36,000 displaced children every
+                        day. Where there's sport, there's hope.</p>
+                </div>
+                <div class="slides2">
+                    <h1>Sport, the ultimate <br>peacekeeping <br>force.</h1>
+                    <p>In Afghanistan, sport is being used to bridge gaps and prevent conflict. The United Nations
+                        Assistance Mission in Afghanistan used cricket and volleyball to celebrate the International Day
+                        of Peace. Sport, a force to be reckoned with.</p>
+                </div>
+                <div class="slides2">
+                    <h1>Sport causes global <br> warming.</h1>
+                    <p>In April 1971, during the height of the Cold War, a delegation from the American Ping Pong
+                        National Team set foot on Chinese soil to play an exhibition tournament. This moment marked a
+                        thaw in relations between the two countries that politicians had been unable to achieve. When in
+                        doubt, ping pong.</p>
+                </div>
+                <div class="slides2">
+                    <h1> Introducing <br>sportswomanship. </h1>
+                    <p>In 2008, players on a Central Washington University softball team carried an opposing team member
+                        around the bases after she collapsed from injury following a three-run homer she just hit,
+                        despite the fact that doing so would contribute to their elimination from the playoffs. Move
+                        over, Spartacus.</p>
+                </div>
+                <div class="slides2">
+                    <h1> Sport is hope's <br> blood brother. </h1>
+                    <p>Amputee soccer has given the victims of the barbaric practice of amputations during the Sierra
+                        Leone civil war a new lease on life. Former outcasts have become beacons of hope. That's what we
+                        call a result.</p>
+                </div>
+                <div class="slides2">
+                    <h1> Sport Does Not <br> Discriminate. </h1>
+                    <p>At age 13, Princess Haya Al Hussein of Jordan became the first female to represent her country
+                        internationally in equestrian sport. She's the only woman to win a Pan Arab Medal in show
+                        jumping, the only Jordanian athlete to turn pro, and the first and only woman in Jordan to hold
+                        a heavy truck license, so she can drive her horses to competitions. This makes her a triple
+                        threat against ageism, sexism, and princess dresses that are hard to ride in.</p>
+                </div>
+                <div class="slides2">
+                    <h1> Give up when you are dead. </h1>
+                    <p>In 1992, Olympic sprinter Derek Redmond pulled his hamstring in the back stretch of the 400m.
+                        POP. To many that would have been the end of the competition. But not Derek. Derek picked
+                        himself back up and, with his dad by his side, limped the grueling final 175 meters to the
+                        finish line. Ligament shmigament.</p>
+                </div>
+            </div>
+        </div>
+        <div class="more2">
+            <img src="images/refresh.gif" id="refresh">
+            <img src="images/icon_more.png" id="more-img">
+        </div>
+    </section>
+    
+    <!-- section 9 -->
+    <section>
+        <div class="parent">
+      <div class="child" style="
+      background: url(images/sec9d.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;">
+    </div>
+        </div>
+        <div class="content" id="cardboardbox">
+            <h1>With<br>you. <br></h1>
+            <h2>wow look at the edaters in the background</h2>
+            <p>I’ve never had a relationship like this before.
+
+Not one that felt this real. This committed. This full of love.<br> <br> 
+
+You were my first for so many things — the first time I felt truly taken, loved, and chosen.<br> 
+I’ve never made it this far with anyone. Never dated for this long.<br> <br> 
+
+And I’m just so thankful that my first real love... is you.<br> <br> 
+
+I’ve told you this before, but I mean it more each day: I feel lucky.<br> 
+Lucky that we met years ago. Lucky we found our way back. And even luckier that we’re still here — a year in — stronger than ever.<br> <br> 
+
+You’ve stood by me through my flaws, my lowest moments, and my silence<br> .
+I don’t know what I did to deserve someone as beautiful and kind as you, but I promise I’m trying to become the man you deserve.<br> <br> 
+
+Even when I’m busy… even when I can’t say it out loud… you’re always on my mind.<br> 
+I wonder if you’ve eaten, if you’re okay, if you’re sleeping enough.<br> <br> 
+
+Because you matter.<br> <br> 
+Because I love you.<br> <br> 
+
+And I never want to stop showing you that.</p>
+        </div>
+    </section>
+
+    <!-- section 10 -->
+
+
+    <!-- section 11 -->
+    <section>
+        <div class="parent">
+      <div class="child" style="
+      background: url(images/cuteend.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;">
+    </div>
+        <div class="content" id="greenrubber">
+            <h1>You,<br> In every tomorrow.</h1>
+            <h2>WHEN ARE WE GONNA BE TOGETHER GRAAAAA</h2>
+            <p>Just like I said earlier… this is my first time doing so many things —
+and now it’s also the first time I’ve ever tried building something like this — a whole project, just for someone I love.<br><br>
+I know the code might be messy haha I hope you dont mind how much of a flop my coding is<br>
+but I hope you see it for what it truly is: a little piece of my heart, written just for you.<br><br>
+
+I want to be with you. Not just now, not just for the next few months — but for all the days ahead.<br><br>
+
+I want to grow with you. To chase dreams together. To face life’s hardest and happiest moments side by side.<br><br>
+
+There are times I just sit and daydream about us —mornings with you, cooking together, the shared goals,and the country visits vacation we’ll have someday.<br><br>
+
+I know it’s only been a year.<br>
+But if you’d let me, I’d choose you for all the years that follow.<br><br>
+
+My dreams, my promises, my future — they all have you in them.<br><br>
+
+So please… stay with me.<br>
+Let’s reach every milestone together, hand in hand.<br><br>
+
+Forever — if you’ll have me.</p>
+        </div>
+    </section>
+
+    <!-- section 12  -->
+    <section>
+        <div class="sm-logo" ></div>
+        <div class="stats">
+            You've scrolled &emsp; <span class="scroll"> 13,744 </span> &nbsp; pixels toward my love for you. <a
+                href="#"> come back at the top!.</a>
+        </div>
+    </section>
+
+    <img src="images/line.png" class="line">
+    <img src="images/line.png" class="line">
+    <img src="images/line.png" class="line">
+    <img src="images/line.png" class="line">
+    <img src="images/line.png" class="line">
+    <img src="images/line.png" class="line">
+    <img src="images/line.png" class="line">
+    <img src="images/line.png" class="line">
+    <img src="images/line.png" class="line">
+    <img src="images/line.png" class="line">
+    <img src="images/line.png" class="line">
+    <img src="images/line.png" class="line">
+
+
+    <!-- ***** script tags **** -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jscex.min.js"></script>
+    <script src="js/jscex-parser.js"></script>
+    <script src="js/jscex-jit.js"></script>
+    <script src="js/jscex-builderbase.min.js"></script>
+    <script src="js/jscex-async.min.js"></script>
+    <script src="js/jscex-async-powerpack.min.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/love.js"></script>
+    <script src="js/main.js"></script>
+
+   
+
+
+<script>
+var closeWelcomeBtn = document.getElementById('close-welcome-overlay');
+if (closeWelcomeBtn) {
+    closeWelcomeBtn.onclick = function() {
+        var welcomeOverlay = document.getElementById('welcome-overlay');
+        if (welcomeOverlay) {
+            welcomeOverlay.style.display = 'none';
+        }
+    };
+}
+</script>
+<div id="emoji-burst-overlay" style="display:none; position:fixed; z-index:30000; left:0; top:0; width:100vw; height:100vh; pointer-events:none;"></div>
+<div id="burst-bg-overlay" style="display:none; position:fixed; z-index:29999; left:0; top:0; width:100vw; height:100vh; background:#fff; align-items:center; justify-content:center;">
+    <img id="burst-bg-img" src="images/1684873de47b6a76b5d46022cb13d6e9.jpg" alt="Surprise!">
+</div>
+
+<div id="love-confirm-overlay" style="display:none; position:fixed; z-index:35000; left:0; top:0; width:100vw; height:100vh; background:rgba(255,255,255,0.96); align-items:center; justify-content:center;">
+    <div style="text-align:center;">
+        <h2 style="font-size:2.5em; color:#e75480; margin-bottom:20px;">does my pookie love me</h2>
+        <button id="love-confirm-btn" style="font-size:1.5em; padding:18px 48px; border-radius:32px; background:#ffb6d5; color:#fff; border:none; box-shadow:0 2px 12px #e7548040; cursor:pointer;">
+            yes😘
+           
+        </button>
+ <p>yes this is a verification</p>
+    </div>
+</div>
+<div id="funny-img-overlay" style="display:none; position:fixed; z-index:36000; left:0; top:0; width:100vw; height:100vh; background:rgba(255,255,255,0.98); align-items:center; justify-content:center;">
+    <img id="funny-img" src="images/09d88f7c58031da7824c1bafceb3e58a.jpg" alt="Funny!" style="width:600px; height:600px; border-radius:50%; opacity:0; transform:scale(0.2); transition:opacity 0.3s, transform 1.2s cubic-bezier(.17,.67,.83,.67);">
+</div>
+<audio id="love-music" src="music.mp3"></audio>
+
+<button id="see-history-btn" style="display:none; position:absolute;top:24px;right:32px;z-index:100000;font-size:1.2em;background:#ffb6d5;border:none;color:#fff;cursor:pointer; border-radius:24px; padding:12px 28px;">
+    See Our History Together
+</button>
+
+</body></html>
