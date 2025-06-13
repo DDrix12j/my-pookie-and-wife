@@ -11,10 +11,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
     <style>
-      header {
+    header {
     background-color: #e0fbf4;
     color: white;
-    padding: 200px 40px 20px 40px; /* Add left/right padding here */
+    padding: 40px 0 20px 0; /* Less top padding */
+}
+.header-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.logo img {
+    max-width: 250px;
+    max-height: 250px;
+    margin: 0;
+    display: block;
+}
+.header-title {
+    flex: 1 1 0;
+    font-family: 'Great Vibes', cursive;
+    font-size: 3em;
+    color: #000;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px #fff3fa;
+    text-align: center;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
 }
       /* Reset styles for landing page */
       #landing-page {
@@ -578,7 +609,7 @@ if (closeBtn) {
 <header>
     <div class="header-flex">
         <div class="logo">
-            <img src="images/logo_sml.jpg" width="300" height="300" style="margin-top:-30px; margin-left:-20px;">
+            <img src="images/logo_sml.jpg">
         </div>
         <div class="header-title">
             <span class="fancy">Happy Anniversary My Pookie</span>
