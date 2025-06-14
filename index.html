@@ -12,9 +12,9 @@
 
     <style>
     header {
-    background-color: #e0fbf4;
+    background-color: #e6e6fa;
     color: white;
-    padding: 40px 0 20px 0; /* Less top padding */
+
 }
 .header-flex {
     display: flex;
@@ -27,8 +27,8 @@
     margin: 0 auto;
 }
 .logo img {
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 300px;
+    max-height: 300px;
     margin: 0;
     display: block;
 }
@@ -554,6 +554,61 @@
     min-width: 320px; /* Same as .logo min-width */
     flex: 0 0 auto;
 }
+.video-section {
+    background: url('images/nikkiseer.png') center center / cover no-repeat #010511;
+    min-height: 100vh;      /* Ensures section fills the viewport */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    align-items: center;     /* Horizontally center content */
+    padding: 0;
+    margin: 0;
+}
+.video-section .slides {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.video-section video {
+    aspect-ratio: 9 / 16;      /* Portrait aspect ratio */
+    width: 60vw;               /* Responsive width */
+    max-width: 360px;          /* Optional: limit max width */
+    height: auto;              /* Height adjusts automatically */
+    display: block;
+    margin: 0 auto;
+    background: #000;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    object-fit: contain;       /* Show full video, no cropping */
+}
+.video-section-8 {
+    background: url('images/seer.png') center center / cover no-repeat #010511;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.video-section-8 video {
+    aspect-ratio: 9 / 16;
+    height: 80vh;
+    width: auto;
+    max-width: 60vw;
+    display: block;
+    margin: 0 auto;
+    background: #000;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    object-fit: cover;
+}
+.stats a {
+    color: #ff69b4; /* or any pink shade you like */
+    text-decoration: underline;
+}
     </style>
 </head>
 <body>
@@ -583,33 +638,32 @@ if (closeBtn) {
 }
 </script>
 
-<!-- <div id="landing-page" style="display:flex; flex-direction:column; align-items:center; justify-content:center;">
-    <div class="letter-image">
-        <div class="animated-mail">
-            <div class="back-fold"></div>
-            <div class="body"></div>
-            <div class="letter">
-              <h1>Wife And Pookie💌</h1>
-              <h2>if u my pookie click this ho</h2>
-              <button id="surprise-btn">Click to see nearby single moms in your area💖</button>
-              <div class="letter-title"></div>
-              <div class="letter-context"></div>
-              <div class="letter-stamp">
-                <div class="letter-stamp-inner"></div>
-              </div>
-            </div>
-            <div class="top-fold"></div>
-            <div class="left-fold"></div>
-            <div class="shadow"></div>
-          </div>
-        <div class="shadow"></div>
-    </div>
-</div> -->
+<div id="landing-page">
+  <div class="landing-content">
+    <h1>Welcome, Pookie! 💖</h1>
+    <p>if you my pookie click this hoe</p>
+    <p1>(if possible wait for like 30seconds before clicking cuz github load files slows)</p1>
+    <button id="landing-btn">see nearby single moms in your area</button>
+  </div>
+</div>
+
+<div id="emoji-burst-overlay" style="display:none; position:fixed; z-index:30000; left:0; top:0; width:100vw; height:100vh; pointer-events:none;"></div>
+<div id="burst-bg-overlay" style="display:none; position:fixed; z-index:29999; left:0; top:0; width:100vw; height:100vh; background:#fff; align-items:center; justify-content:center;">
+    <img id="burst-bg-img" src="images/1684873de47b6a76b5d46022cb13d6e9.jpg" alt="Surprise!">
+</div>
+
+<div id="funny-img-overlay" style="display:none; position:fixed; z-index:36000; left:0; top:0; width:100vw; height:100vh; background:rgba(255,255,255,0.98); align-items:center; justify-content:center;">
+    <img id="funny-img" src="images/09d88f7c58031da7824c1bafceb3e58a.jpg" alt="Funny!" style="width:600px; height:600px; border-radius:50%; opacity:0; transform:scale(0.2); transition:opacity 0.3s, transform 1.2s cubic-bezier(.17,.67,.83,.67);">
+</div>
+
+<div id="heart-tree-overlay" style="display:none; position:fixed; z-index:37000; left:0; top:0; width:100vw; height:100vh;">
+    <!-- your tree animation here -->
+</div>
    
 <header>
     <div class="header-flex">
         <div class="logo">
-            <img src="images/logo_sml.jpg">
+            <img src="images/logo_sml.png">
         </div>
         <div class="header-title">
             <span class="fancy">Happy Anniversary My Pookie</span>
@@ -620,37 +674,54 @@ if (closeBtn) {
 
     <div class="nav-dots">
         <div class="dot-container">
-            <div class="dot" id="dot1" data-content="Home"></div>
+            <div class="dot" id="dot1" data-content="my first year with you"></div>
         </div>
         <div class="dot-container">
-            <div class="dot" id="dot2" data-content="Nike Free TR Fit"></div>
+            <div class="dot" id="dot2" data-content="It's the
+way we met,
+and the way
+I fell in love
+with you"></div>
         </div>
         <div class="dot-container">
-            <div class="dot" id="dot3" data-content="8 Plastic Bottles"></div>
+            <div class="dot" id="dot3" data-content="
+In every
+little moments."></div>
         </div>
         <div class="dot-container">
-            <div class="dot" id="dot4" data-content="Power Of Sport"></div>
+            <div class="dot" id="dot4" data-content="me when pookie when she told me she fat"></div>
         </div>
         <div class="dot-container">
-            <div class="dot" id="dot5" data-content="NYC Plays Ball"></div>
+            <div class="dot" id="dot5" data-content="
+The storm
+i'd stand
+in any day."></div>
         </div>
         <div class="dot-container">
-            <div class="dot" id="dot6" data-content="Homeless World Cup"></div>
+            <div class="dot" id="dot6" data-content="Always
+will be
+yours."></div>
         </div>
         <div class="dot-container">
-            <div class="dot" id="dot7" data-content="Nike N7"></div>
+            <div class="dot" id="dot7" data-content="Still
+here,
+Still
+holding on."></div>
         </div>
         <div class="dot-container">
             <div class="dot" id="dot8" data-content="Power Of Sport"></div>
         </div>
         <div class="dot-container">
-            <div class="dot" id="dot9" data-content="A Better Shoebox"></div>
+            <div class="dot" id="dot9" data-content="With
+you."></div>
         </div>
         <div class="dot-container">
-            <div class="dot" id="dot10" data-content="Soweto's Next Generation"></div>
+            <div class="dot" id="dot10" data-content="
+You,
+In every tomorrow."></div>
         </div>
         <div class="dot-container">
-            <div class="dot" id="dot11" data-content="Technology Exchange"></div>
+            <div class="dot" id="dot11" data-content="more, in the future"></div>
         </div>
     </div>
 
@@ -676,7 +747,10 @@ if (closeBtn) {
                 background-repeat: no-repeat;
                 background-position: top center;">
     </div>
-  </div>
+<div class="content" id="video">
+    <p style="font-size: 2rem;">my first year with you &lt;3</p>
+    <img src="images/cat.gif">
+</div>
 
 </section>
 
@@ -733,16 +807,15 @@ And every time she does, I fall even more in love with her..</p>
         </div>
     </section>
 
-       <!-- section 4 -->
-    <section>
-        <div class="slider">
-            <div class="slider-container">
-                <div class="slides">
-                   
-                </div>
+<section class="video-section ">
+                <video id="vid1" controls>
+                    <source src="images/vid2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- section 5 -->
     <section>
@@ -833,15 +906,15 @@ And I’ll spend every day proving that I’m worth the forgiveness you gave me.
         </div>
     </section>
 <!-- section 8 -->
-    <section>
-        <div class="slider">
-            <div class="slider-container">
-                <div class="slides2">
-                    
+<section class="video-section-8">
+                <video id="vid1" controls>
+                    <source src="images/vid1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
-
-    </section>
+    </div>
+</section>
     
     <!-- section 9 -->
     <section>
@@ -976,7 +1049,7 @@ if (closeWelcomeBtn) {
 <div id="love-confirm-overlay" style="display:none; position:fixed; z-index:35000; left:0; top:0; width:100vw; height:100vh; background:rgba(255,255,255,0.96); align-items:center; justify-content:center;">
     <div style="text-align:center;">
         <h2 style="font-size:2.5em; color:#e75480; margin-bottom:20px;">does my pookie love me</h2>
-        <button id="love-confirm-btn" style="font-size:1.5em; padding:18px 48px; border-radius:32px; background:#ffb6d5; color:#fff; border:none; box-shadow:0 2px 12px #e7548040; cursor:pointer;">
+        <button id="love-confirm-btn" style="font-size:1.5em; padding:18px 48px; border-radius:32px; background:#ffb6d5; color:#000000; border:none; box-shadow:0 2px 12px #e7548040; cursor:pointer;">
             yes😘
            
         </button>
@@ -992,4 +1065,93 @@ if (closeWelcomeBtn) {
     See Our History Together
 </button>
 
-</body></html>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Overlay elements
+    const landing = document.getElementById('landing-page');
+    const btn = document.getElementById('landing-btn');
+    const burstBg = document.getElementById('burst-bg-overlay');
+    const burstImg = document.getElementById('burst-bg-img');
+    const loveConfirm = document.getElementById('love-confirm-overlay');
+    const loveConfirmBtn = document.getElementById('love-confirm-btn');
+    const funnyOverlay = document.getElementById('funny-img-overlay');
+    const funnyImg = document.getElementById('funny-img');
+
+
+    // Landing button click: start the sequence
+    if (btn) {
+        btn.addEventListener('click', function() {
+            // Hide landing page
+            landing.style.opacity = 0;
+            setTimeout(() => {
+                landing.style.display = 'none';
+            }, 700);
+
+            // Show burst background overlay and animate image
+            burstBg.style.display = 'flex';
+            setTimeout(() => {
+                burstImg.style.opacity = 1;
+                burstImg.style.transform = 'scale(1)';
+            }, 50);
+
+            // Emoji burst at the same time (if you have this function)
+            if (typeof emojiBurst === 'function') emojiBurst();
+
+            // After burst, hide burst overlay and show love confirm overlay
+            setTimeout(function() {
+                burstImg.style.opacity = 0;
+                burstImg.style.transform = 'scale(0.2)';
+                setTimeout(() => {
+                    burstBg.style.display = 'none';
+                    // Show love confirm overlay
+                    loveConfirm.style.display = 'flex';
+                }, 700);
+            }, 5000); // Show burst image for 1.8s
+        });
+    }
+
+  if (loveConfirmBtn) {
+    loveConfirmBtn.addEventListener('click', function() {
+        // Play the music at 20% volume
+        const music = document.getElementById('love-music');
+        music.volume = 0.2;
+        music.play();
+
+        loveConfirm.style.display = 'none';
+        // Show funny image overlay
+        funnyOverlay.style.display = 'flex';
+        setTimeout(() => {
+            funnyImg.style.opacity = 1;
+            funnyImg.style.transform = 'scale(1)';
+        }, 50);
+
+        // After a delay, hide funny overlay and show tree overlay
+        setTimeout(() => {
+            funnyImg.style.opacity = 0;
+            funnyImg.style.transform = 'scale(0.2)';
+            setTimeout(() => {
+                funnyOverlay.style.display = 'none';
+                // Show tree overlay
+                treeOverlay.style.display = 'flex';
+                treeOverlay.style.opacity = 0;
+                setTimeout(() => {
+                    treeOverlay.style.opacity = 1;
+                }, 10);
+            }, 700);
+        }, 5000); // Show funny image for 1.8s
+    });
+}
+    // Heart tree overlay logic
+    if (treeHeart) {
+        treeHeart.addEventListener('click', function() {
+            treeHeart.style.display = 'none'; // Hide the heart
+            // Start the heart tree animation (from love.js)
+            if (typeof run === 'function') {
+                run(); // This is usually the main function in love.js
+            }
+        });
+    }
+});
+</script>
+</html>
